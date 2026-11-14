@@ -141,7 +141,7 @@ def search(start_state, heuristic):
 
         for neighbor, edge_cost in current.get_neighbors():
             curr_neighbor = search_node(neighbor, current.g + edge_cost, heuristic(neighbor), current)
-            if not duplicate_in_closed(curr_neighbor, open_set) and not duplicate_in_open(curr_neighbor, closed_set):
+            if not duplicate_in_closed(curr_neighbor, closed_set) and not duplicate_in_open(curr_neighbor, open_set):
                 add_to_open(curr_neighbor, open_set)
                 count_generated += 1
 
