@@ -145,11 +145,9 @@ class flat_board_state:
                 temp_board[r, c] = PositionState.CUBE
         return temp_board, changed
 
-    # you can change the body of the function if you want
     def __hash__(self):
         return hash(tuple(map(tuple, self.board)))
 
-    # you can change the body of the function if you want
     def __eq__(self, other):
         if not isinstance(other, flat_board_state):
             return False
@@ -161,4 +159,3 @@ class flat_board_state:
     def get_state_str(self):
         return str(self.board.tolist())
 
-    # you can add helper functions
